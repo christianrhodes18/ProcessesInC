@@ -1,2 +1,4 @@
 # ProcessesInC
-Using fork() to create a parent and child process that can communicate back and forth.
+This program uses fork() to create a parent and child process that can communicate back and forth, editing a piece of shared memory. This is possible through signal handlers that modify a isDone boolean that determines whether a process can advance with its code. In this program, fork() creates two processes. One is the parent process, and one is the child process. The parent prints its process ID, then calls the kill() function to signal to jump to the child process. The parent then waits for the child process to finish with while(!doneChild). This is the general form that allows the two processes to interact. 
+
+Try to run this program and you will see the parent and child processes establish a connection to the shared memory (with shmat()) and write to / read from this variable. 
